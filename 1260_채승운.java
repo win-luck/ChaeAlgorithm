@@ -7,27 +7,23 @@ public class Main {
 	public static int[][] arr;
 	
 	public static void DFS(int V) {
-		int w;
 		visited[V] = true;
 		System.out.print(V + " ");
-		for(w=1; w<=N; w++) {
-			if(arr[V][w]==1 && !visited[w]) { 
+		for(int w=1; w<=N; w++) 
+			if(arr[V][w]==1 && !visited[w])
 				// 이동할 수 있는 정점이 남아있다면 그곳으로 이동
-				DFS(w);
-			}
-		}
+				DFS(w);		
 	}
 	
 	public static void BFS() {
 		
-		Queue<Integer> q = new LinkedList<Integer>();
+		Queue<Integer> q = new LinkedList<*>();
 		q.offer(V);
 		visited[V] = true;
 		System.out.print(V + " ");
 		
 		while(q.size()!=0) {
 			int temp = q.poll();
-			
 			for(int j=1; j<=N; j++) {
 				if(arr[temp][j]==1 && !visited[j]) {
 					q.offer(j);
@@ -53,7 +49,6 @@ public class Main {
 			arr[a][b] = arr[b][a] = 1; // 바이러스 문제가 거의 동일함.
 		}
 		DFS(V);
-		
 		System.out.println();
 		visited = new boolean[1001];
 		
