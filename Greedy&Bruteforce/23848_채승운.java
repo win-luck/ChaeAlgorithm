@@ -5,8 +5,7 @@ public class Main{
 	public static void main(String[] args){
 		      Scanner sc = new Scanner(System.in);
 		      long N = sc.nextLong();
-		      StringBuilder sb = new StringBuilder();
-		      
+		      StringBuilder sb = new StringBuilder();		      
 		      long r=2, n=3, input=0; // 공비는 2부터, 항의 개수는 3부터 시작, input은 등비수열의 항이 임시적으로 담김
 		      boolean flag = false; // 등비수열의 존재 여부 확인용 변수
 		     
@@ -24,12 +23,10 @@ public class Main{
 			    		  // a * (r^n-1) / (r-1) = N 식에서, 초항이 input(r^n)으로 나누어떨어진다면 N은 등비수열의 합이 된다.
 			    		  flag = true;
 			    		  break;
-			    	  }
-			    	 			    	  
+				  }			    	 			    	  
 			    	  if(input>1e12) { // 등비수열의 요소들이 10의 12제곱을 넘기면 안 됨!
 			    		  break;
-			    	  }
-			    	  
+			    	  }			    	  
 			    	  input *= r; // 다음 항 생성
 			    	  n++; // 항 추가
 			      }
