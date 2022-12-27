@@ -20,7 +20,7 @@ def solution(id_list, report, k):
 
     for i in id_list:
         for key, value in answer.items():
-            if key == i: # 
+            if key == i: # 신고자의 메일함 감지
                 result.append(value)
 
     return result
