@@ -8,13 +8,12 @@ bool visited[1000][1000];
 
 int dx[4] = {1, 0, -1, 0};
 int dy[4] = {0, 1, 0, -1};
-
 int N, M;
 
 void BFS(int startx, int starty) {
 		queue<pair<int, int>> q;
-
 		q.push(make_pair(startx, starty)); // 목표지점 좌표를 중심으로 bfs 개시
+        visited[startx][starty] = true;
 
 		while(!q.empty()) {
 			int x = q.front().first;
