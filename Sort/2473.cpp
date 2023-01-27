@@ -7,7 +7,7 @@ int main(){
     int n;
     cin >> n;
 
-    long long water[n];
+    long long water[n]; // 정수 범위를 초과할 수 있기에 long long으로 단위 변경
     long long result[3];
 
     for(int i=0; i<n; i++){
