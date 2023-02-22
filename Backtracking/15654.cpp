@@ -8,7 +8,7 @@ bool visited[8];
 vector<int> arr;
 vector<int> list;
 
-void printLine(){ // 한 줄 출력
+void printLine(){ // 한 줄 출력하는 로직
     for(int i=0; i<list.size(); i++){
         cout << list[i] << " ";
     }
