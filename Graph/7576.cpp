@@ -6,15 +6,15 @@ int map[1001][1001];
 int m, n;
 int dx[4] = {-1, 0, 1, 0};
 int dy[4] = {0, 1, 0, -1};
-queue<pair<pair<int, int>, int> > q;
+queue<pair<pair<int, int>, int> > q; // 좌표, 시간
 
 void input(){
     cin >> m >> n;
-    for(int i=0; i<n; i++){
+    for(int i=0; i<n; i++){ // 입력
         for(int j=0; j<m; j++){
             cin >> map[i][j];
             if(map[i][j] == 1){
-                q.push(make_pair(make_pair(i, j), 0));
+                q.push(make_pair(make_pair(i, j), 0)); // 1인 경우 모두 큐에 저장
             }
         }
     }
@@ -23,7 +23,7 @@ void input(){
 bool validcheck(){
     for(int i=0; i<n; i++){
         for(int j=0; j<m; j++){
-            if(map[i][j] == 0) return false;
+            if(map[i][j] == 0) return false; // 하나라도 익지 않았다면 false
         }
     }
     return true;
@@ -59,6 +59,10 @@ void BFS(){
 }
 
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
+    
     input();
     BFS();
     return 0;
