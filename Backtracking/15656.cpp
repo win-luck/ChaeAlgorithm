@@ -17,15 +17,12 @@ void backtracking(int cnt){
         return;
     }
 
-    for(int i=0; i<n; i++){
-        if(visited[i]) continue;
-        if(v.empty() || v[v.size()-1] < arr[i]){
-            visited[i] = true;
-            v.push_back(arr[i]);
-            backtracking(cnt + 1);
-            v.pop_back();
-            visited[i] = false;
-        }
+    for(int i=0; i<n; i++){ // 같은 수를 여러번 골라도 된다.
+        visited[i] = true;
+        v.push_back(arr[i]);
+        backtracking(cnt + 1);
+        v.pop_back();
+        visited[i] = false;
     }
     
 }
