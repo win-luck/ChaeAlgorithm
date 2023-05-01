@@ -16,11 +16,9 @@ void Backtrack(int cnt, int idx){
         return;
     }
     for(int i=0; i<n; i++){
-        if(v.empty() || arr[i] >= v.back()){
-            v.push_back(arr[i]);
-            Backtrack(cnt + 1, idx + 1);
-            v.pop_back();
-        }
+        v.push_back(arr[i]);
+        Backtrack(cnt + 1, idx + 1);
+        v.pop_back();
     }
 }
 

@@ -15,11 +15,15 @@ void Backtrack(int cnt, int idx){
         s.insert(v);
         return;
     }
-    for(int i=0; i<n; i++){
+    for(int i=idx; i<n; i++){
+        if(visited[i]) continue;
+
         if(v.empty() || arr[i] >= v.back()){
+            visited[i] = true;
             v.push_back(arr[i]);
             Backtrack(cnt + 1, idx + 1);
             v.pop_back();
+            visited[i] = false;
         }
     }
 }
