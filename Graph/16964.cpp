@@ -4,8 +4,7 @@
 #include <vector>
 
 using namespace std;
-int n, cnt = 1;
-bool flag;
+int n;
 vector<int> v[100001];
 vector<int> path, real;
 int order[100001];
