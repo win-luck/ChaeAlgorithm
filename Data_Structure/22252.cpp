@@ -29,7 +29,7 @@ int main(){
             }
         } else {
             if(m[str].empty()) continue; // 애초에 비어있으면 꺼내지를 못함
-            sort(m[str].begin(), m[str].end());
+            sort(m[str].begin(), m[str].end()); // 오름차순 정렬하여 뒤부터 꺼냄
             for(int i=0; i<cnt; i++){
                 ans += m[str].back();
                 m[str].pop_back();
