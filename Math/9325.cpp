@@ -1,20 +1,20 @@
 #include <iostream>
-#include <vector>
 #include <algorithm>
 
 using namespace std;
 
 int main(){
-    int n;
-    vector<int> v;
+    int t, n, sum, a, b;
 
-    cin >> n;
-    for(int i=0; i<n; i++){
-        int a;
-        cin >> a;
-        v.push_back(a);
+    cin >> t;
+    while(t--){
+        cin >> sum;
+        cin >> n;
+        for(int i=0; i<n; i++){
+            cin >> a >> b;
+            sum += (a*b);
+        }
+        cout << sum << '\n';
     }
-    sort(v.begin(), v.end());
-    cout << v.back() - v.front();
     return 0;
 }
