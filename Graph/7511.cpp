@@ -27,14 +27,14 @@ int main(){
         cin >> n;
         for(int i=0; i<=n; i++){
             parent[i] = i;
-        }
+        } // 초기화
         cin >> k;
         for(int i=0; i<k; i++){
             int a, b;
             cin >> a >> b;
             if(find(a) != find(b)){
                 merge(a, b);
-            }
+            } // 같은 그룹에 병합
         }
         cin >> m;
         vector<int> v;
@@ -42,7 +42,7 @@ int main(){
             int a, b;
             cin >> a >> b;
             v.push_back(find(a) == find(b) ? 1 : 0);
-        }
+        } // 같은 그룹에 속한지에 대한 여부를 저장
         cout << "Scenario " << a+1 << ":\n";
         for(int i=0; i<v.size(); i++){
             cout << v[i] << '\n';

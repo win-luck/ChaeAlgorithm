@@ -55,6 +55,6 @@ int main(){
             return 0;
         }
     }
-    cout << 0 << '\n'; // 실패
+    cout << 0 << '\n'; // 도착할 수 없음
     return 0;
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 int parent[100001];
-int planet[100001];
+int nation[100001];
 int n, m;
 
 int find(int num){
@@ -19,7 +19,7 @@ int main(){
     cin >> n >> m;
     for(int i=1; i<=n; i++){
         parent[i] = i;
-        cin >> planet[i];
+        cin >> nation[i];
     }
 
     for(int i=1; i<=m; i++){
@@ -32,13 +32,13 @@ int main(){
         if(a != b){
             if(a > b) {
                 parent[a] = b;
-                planet[b] += planet[a];
+                nation[b] += nation[a];
             } else {
                 parent[b] = a;
-                planet[a] += planet[b];
+                nation[a] += nation[b];
             }
         }
-        cout << ((a > b) ? planet[b] : planet[a]) << '\n';
+        cout << ((a > b) ? nation[b] : nation[a]) << '\n';
     }
     return 0;
 }
