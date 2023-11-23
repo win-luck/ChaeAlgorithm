@@ -5,8 +5,6 @@ using namespace std;
 int n;
 int map[3][3];
 bool visited[3][3];
-int dx[4] = {1, 0};
-int dy[4] = {0, 1};
 
 bool BFS(){
     queue<pair<int, int> > q;
