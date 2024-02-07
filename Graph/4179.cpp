@@ -52,17 +52,17 @@ int bfs(){
 }
 
 void input(){
-    cin >> m >> n;
+    cin >> n >> m;
     for(int i=0; i<n; i++){
         string str;
         cin >> str;
         for(int j=0; j<m; j++){
             map[i][j] = str[j];
-            if(map[i][j] == '@'){
+            if(map[i][j] == 'J'){
                 q.push(make_pair(i, j));
                 visited[i][j] = 1;
             }
-            if(map[i][j] == '*'){
+            if(map[i][j] == 'F'){
                 fireq.push(make_pair(i, j));
                 f_visited[i][j] = 1;
             }
@@ -75,24 +75,15 @@ int main(){
     cin.tie(0);
     cout.tie(0);
 
-    int t;
-    cin >> t;
-    while(t--){
-        input();
-        if(!fireq.empty()){
-            bfs_fire();
-        }
-        int a = bfs();
-        if(a == -1){
-            cout << "IMPOSSIBLE\n";
-        } else {
-            cout << a << '\n';
-        }
-
-        while(!q.empty()) q.pop();
-        while(!fireq.empty()) fireq.pop();
-        memset(visited, 0, sizeof(visited));
-        memset(f_visited, 0, sizeof(f_visited));
+    input();
+    if(!fireq.empty()){
+        bfs_fire();
+    }
+    int a = bfs();
+    if(a == -1){
+        cout << "IMPOSSIBLE\n";
+    } else {
+        cout << a << '\n';
     }
     return 0;
 }
