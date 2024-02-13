@@ -38,10 +38,10 @@ void dijkstra(){
 
             if(newx < 0 || newx >= h || newy < 0 || newy >= w) continue;
             if(map[newx][newy] == '*') continue;
-            if(i == d && dist[newx][newy][i] > dist[nowx][nowy][d]){
+            if(i == d && dist[newx][newy][i] > dist[nowx][nowy][d]){ // 같은 방향
                 dist[newx][newy][i] = dist[nowx][nowy][d];
                 q.push(make_pair(i, make_pair(newx, newy))); 
-            } else if(i != d && dist[newx][newy][i] > dist[nowx][nowy][d]+1){
+            } else if(i != d && dist[newx][newy][i] > dist[nowx][nowy][d]+1){ // 다른 방향
                 dist[newx][newy][i] = dist[nowx][nowy][d] + 1;
                 q.push(make_pair(i, make_pair(newx, newy))); 
             }
